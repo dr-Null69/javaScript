@@ -18,7 +18,7 @@ function task1() {
 }
 
 function task2() {
-    let colors = ["червоний", "синій", "зелений", "світло-синій", "жовтий"];
+    let colors = ["червоний", "синій", "зелений", "світло синій", "жовтий"];
 
     let longest = colors.reduce((a, b) => a.length > b.length ? a : b);
     let shortest = colors.reduce((a, b) => a.length < b.length ? a : b);
@@ -41,7 +41,7 @@ function task3() {
     employees.sort((a, b) => a.name.localeCompare(b.name));
 
     let developers = employees.filter(emp => emp.position === "розробник");
-    console.log("3.3 Розробники:", developers);
+    console.log("3.3:", developers);
 
     employees = employees.filter(emp => emp.age <= 28);
 
@@ -65,20 +65,20 @@ function task4() {
 
     let thirdCourse = students.find(st => st.course === 3);
 
-    console.log("4.5 Студент 3 курсу:", thirdCourse);
+    console.log("4.5:", thirdCourse);
 }
 
 function task5() {
     let numbers = [1, 2, 3, 4, 5];
 
     let squares = numbers.map(n => n * n);
-    console.log("5.1 Квадрати:", squares);
+    console.log("5.1:", squares);
 
     let evens = numbers.filter(n => n % 2 === 0);
-    console.log("5.2 Парні:", evens);
+    console.log("5.2:", evens);
 
     let sum = numbers.reduce((acc, n) => acc + n, 0);
-    console.log("5.3 Сума:", sum);
+    console.log("5.3:", sum);
 
     let extra = [6, 7, 8, 9, 10];
     numbers = numbers.concat(extra);
