@@ -1,0 +1,74 @@
+/* Загальний тьмяний фон */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #d1d1d1;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.main-wrapper {
+    text-align: center;
+}
+
+/* Спрощений, плоский корпус світлофора */
+.traffic-light-flat {
+    width: 80px;
+    background-color: #444; /* Темно-сірий, плоский */
+    padding: 10px;
+    border: 3px solid #222; /* Проста темна рамка */
+    margin: 0 auto 15px;
+}
+
+/* Базовий стиль ламп: тьмяні, плоскі кола */
+.lamp-flat {
+    width: 60px;
+    height: 60px;
+    background-color: #666; /* Тьмяний сірий для вимкненого стану */
+    border-radius: 50%;
+    margin: 8px auto;
+    border: 2px solid #333;
+    /* transition видалено для різкого перемикання */
+}
+
+/* Активні кольори: плоскі, не яскраві, без світіння (box-shadow) */
+.lamp-flat.red-active {
+    background-color: #a33; /* Тьмяно-червоний */
+}
+
+.lamp-flat.yellow-active {
+    background-color: #aa3; /* Тьмяно-жовтий */
+}
+
+.lamp-flat.green-active {
+    background-color: #3a3; /* Тьмяно-зелений */
+}
+
+/* Спрощене табло */
+.info-board {
+    background: #bbb;
+    padding: 5px;
+    border: 1px solid #999;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.info-board p { margin: 2px 0; }
+#timer-text { font-weight: bold; font-size: 1.1em; }
+
+/* Кнопки без градієнтів та ховер-ефектів */
+.simple-btn {
+    padding: 8px 15px;
+    margin: 0 3px;
+    cursor: pointer;
+    background-color: #eee;
+    border: 1px solid #999;
+    color: #333;
+    border-radius: 2px;
+}
+
+.simple-btn:active { background-color: #ccc; } /* Тільки ефект натискання */
+.simple-btn.settings { font-size: 0.9em; }

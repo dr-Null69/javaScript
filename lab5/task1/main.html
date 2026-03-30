@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Модель лампочки JS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Smart Bulb Model</h1>
+        
+        <div id="bulb" class="bulb off"></div>
+
+        <div class="status-panel">
+            Статус: <span id="status-text">Вимкнено</span> | 
+            Тип: <span id="type-text">Звичайна</span>
+        </div>
+
+        <div class="controls">
+            <button id="toggle-btn">Увімкнути / Вимкнути</button>
+            <button id="brightness-btn">Змінити яскравість</button>
+            <select id="type-select">
+                <option value="regular" data-desc="М'яке жовте світло">Звичайна</option>
+                <option value="eco" data-desc="Економне біле світло">Енергозберігаюча</option>
+                <option value="led" data-desc="Яскраве синє світло">Світлодіодна</option>
+            </select>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

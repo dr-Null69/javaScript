@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Система управління товарами</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <h1>Каталог товарів</h1>
+        
+        <section class="form-section">
+            <h3>Додати новий товар</h3>
+            <div class="input-group">
+                <input type="text" id="p-name" placeholder="Назва">
+                <input type="number" id="p-price" placeholder="Ціна">
+                <input type="number" id="p-stock" placeholder="Кількість">
+                <input type="text" id="p-category" placeholder="Категорія">
+                <button onclick="handleAddProduct()">Додати</button>
+            </div>
+        </section>
+
+        <section class="catalog-section">
+            <h3>Актуальний каталог</h3>
+            <table id="product-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Назва (Категорія)</th>
+                        <th>Ціна</th>
+                        <th>Склад</th>
+                        <th>Дії</th>
+                    </tr>
+                </thead>
+                <tbody id="catalog-body"></tbody>
+            </table>
+        </section>
+
+        <section class="info-section">
+            <h3>Унікальні категорії:</h3>
+            <div id="categories-list"></div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

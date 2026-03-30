@@ -1,0 +1,18 @@
+body { font-family: sans-serif; background: #f4f4f4; display: flex; justify-content: center; padding: 20px; }
+.dashboard { width: 100%; max-width: 500px; }
+.widget { background: white; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; }
+
+/* Годинник */
+.clock-display { font-size: 2rem; font-family: monospace; font-weight: bold; }
+.dots { transition: opacity 0.2s; }
+.dots.hidden { opacity: 0; }
+
+/* Календар */
+table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+th, td { border: 1px solid #ddd; padding: 8px; text-align: center; font-size: 14px; }
+th { background: #eee; }
+.today { background: #ffeb3b; font-weight: bold; border: 2px solid #fbc02d; }
+
+/* Форми */
+input, button { padding: 8px; margin: 5px 0; width: 100%; box-sizing: border-box; }
+#birthday-result { margin-top: 10px; font-style: italic; color: #555; }
