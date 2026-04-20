@@ -1,0 +1,25 @@
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #eceff1; display: flex; justify-content: center; padding: 20px; }
+.container { width: 100%; max-width: 600px; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+
+.input-group { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 15px; }
+input, select { padding: 10px; border: 1px solid #cfd8dc; border-radius: 6px; flex: 1; min-width: 120px; }
+button { padding: 10px 20px; cursor: pointer; background: #4caf50; color: white; border: none; border-radius: 6px; transition: 0.3s; width: 100%; }
+button:hover { background: #45a049; }
+
+.controls { margin: 20px 0; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.controls button { width: auto; background: #607d8b; font-size: 0.85em; }
+
+.todo-item { 
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 15px; border-bottom: 1px solid #f1f1f1;
+    animation: slideIn 0.4s ease-out; 
+}
+
+@keyframes slideIn { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
+
+.todo-info { display: flex; flex-direction: column; gap: 4px; flex: 1; cursor: pointer; }
+.todo-text { font-weight: 500; font-size: 1.1em; }
+.todo-date { font-size: 0.85em; color: #78909c; }
+.completed .todo-text { text-decoration: line-through; color: #b0bec5; }
+
+.btn-del { background: #e53935; width: auto; padding: 5px 12px; font-size: 0.8em; }
