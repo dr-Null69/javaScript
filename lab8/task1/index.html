@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>task1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Memory Pair Game</h1>
+
+<div class="controls">
+
+  <div class="block">
+    <label>Складність:</label>
+    <select id="difficulty">
+      <option value="easy">Easy</option>
+      <option value="normal">Normal</option>
+      <option value="hard">Hard</option>
+    </select>
+  </div>
+
+  <div class="block">
+    <label>Гравець 1:</label>
+    <input id="player1" placeholder="Player 1">
+    
+    <label>Гравець 2:</label>
+    <input id="player2" placeholder="(опціонально)">
+  </div>
+
+  <div class="block">
+    <label>Раунди:</label>
+    <input type="number" id="rounds" value="1" min="1">
+  </div>
+
+  <div class="buttons">
+    <button id="start">Почати гру</button>
+    <button id="restart">Рестарт</button>
+  </div>
+
+</div>
+
+<div class="info">
+  <p>Хід: <span id="current-player"></span></p>
+  <p>Рахунок: <span id="score"></span></p>
+  <p>Раунд: <span id="round"></span></p>
+  <p>Ходи: <span id="moves">0</span></p>
+  <p>Час: <span id="time">0</span></p>
+</div>
+
+<div id="game-board"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

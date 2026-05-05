@@ -1,0 +1,59 @@
+body {
+    background: #1e1e2f;
+    color: white;
+    text-align: center;
+    font-family: Arial;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.card {
+    background: #444;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: grab;
+    position: relative;
+}
+
+.card.dragging {
+    opacity: 0.5;
+}
+
+
+.delete {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: red;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+
+.edit-mode .card {
+    animation: wiggle 0.3s infinite;
+}
+
+.edit-mode .delete {
+    display: block;
+}
+
+@keyframes wiggle {
+    0% { transform: rotate(-2deg); }
+    50% { transform: rotate(2deg); }
+    100% { transform: rotate(-2deg); }
+}
+
+.placeholder {
+    width: 100px;
+    height: 60px;
+    border: 2px dashed white;
+}

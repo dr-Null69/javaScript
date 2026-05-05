@@ -1,0 +1,41 @@
+body {
+  font-family: Arial;
+  background: #1e1e2f;
+  color: white;
+  text-align: center;
+}
+
+.board {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.column {
+  background: #2c2c3e;
+  padding: 10px;
+  border-radius: 10px;
+  width: 200px;
+  min-height: 300px;
+}
+
+.column h2 {
+  margin-bottom: 10px;
+}
+
+.task {
+  background: #444;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: grab;
+}
+
+.task:active {
+  cursor: grabbing;
+}
+
+.column.over {
+  background: #3a3a55;
+}
