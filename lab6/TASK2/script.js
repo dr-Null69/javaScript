@@ -1,10 +1,9 @@
-// Початковий стан
 let state = {
     todos: [],
     sortBy: 'created'
 };
 
-// --- Pure Functions (Чисті функції)  ---
+
 
 const createTodo = (text, dueDate, isCompleted) => ({
     id: Date.now(),
@@ -33,7 +32,6 @@ const sortTasks = (todos, criteria) => {
     }
 };
 
-// --- Rendering & Events ---
 
 const render = () => {
     const list = document.getElementById('todo-list');

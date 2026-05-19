@@ -1,11 +1,9 @@
 'use strict';
 
-// Стан додатку
 let products = [];
 let currentFilter = 'all';
 let currentSort = null;
 
-// Елементи DOM
 const dom = {
     list: document.getElementById('product-list'),
     totalPrice: document.getElementById('total-price'),
@@ -15,7 +13,6 @@ const dom = {
     snackbar: document.getElementById('snackbar')
 };
 
-// --- Pure Functions (Чисті функції) ---
 
 const generateId = () => Date.now().toString();
 
@@ -36,7 +33,6 @@ const sortItems = (items, criteria) => {
     });
 };
 
-// --- UI Logic ---
 
 const showSnackbar = (message) => {
     dom.snackbar.textContent = message;
@@ -45,11 +41,9 @@ const showSnackbar = (message) => {
 };
 
 const render = () => {
-    // Отримуємо відфільтровані та відсортовані дані
     let displayProducts = filterItems(products, currentFilter);
     displayProducts = sortItems(displayProducts, currentSort);
 
-    // Відображення порожнього списку [cite: 7]
     if (products.length === 0) {
         dom.list.innerHTML = `<p class="empty-msg">Наразі список товарів пустий. Додайте новий товар.</p>`;
     } else {
@@ -60,7 +54,6 @@ const render = () => {
         });
     }
 
-    // Оновлення категорій та ціни [cite: 16, 17]
     updateFilterButtons();
     dom.totalPrice.textContent = formatPrice(calculateTotal(products));
 };
@@ -84,7 +77,6 @@ const createProductCard = (product) => {
     return card;
 };
 
-// --- Event Handlers ---
 
 const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -98,11 +90,9 @@ const handleFormSubmit = (e) => {
     };
 
     if (id) {
-        // Редагування [cite: 13, 14, 15]
         products = products.map(p => p.id === id ? { ...p, ...data } : p);
         showSnackbar(`Оновлено: ${data.name} (ID: ${id})`);
     } else {
-        // Створення [cite: 10]
         const newProd = { ...data, id: generateId(), createdAt: new Date() };
         products.push(newProd);
     }
@@ -118,7 +108,6 @@ window.handleDelete = (id) => {
     render();
 };
 
-// --- Фільтрація та Сортування ---
 
 const updateFilterButtons = () => {
     const cats = getCategories(products);
@@ -152,7 +141,6 @@ window.openEditModal = (id) => {
 
 const closeModal = () => { dom.modal.style.display = 'none'; };
 
-// Ініціалізація
 document.getElementById('add-product-btn').onclick = () => openEditModal();
 document.getElementById('close-modal').onclick = closeModal;
 dom.form.onsubmit = handleFormSubmit;

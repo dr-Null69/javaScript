@@ -1,4 +1,3 @@
-// Перемикання табів [cite: 25]
 function openTab(tabName) {
     document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -7,7 +6,6 @@ function openTab(tabName) {
     event.currentTarget.classList.add('active');
 }
 
-// Логіка міст (динамічне поле) [cite: 37]
 const cities = {
     ua: ['Kyiv', 'Lviv', 'Chernivtsi'],
     pl: ['Warsaw', 'Krakow', 'Wroclaw']
@@ -30,7 +28,6 @@ document.getElementById('country-select').addEventListener('change', function() 
     }
 });
 
-// Показати/приховати пароль [cite: 32, 41]
 document.querySelectorAll('.toggle-password').forEach(icon => {
     icon.addEventListener('click', function() {
         const input = this.parentElement.querySelector('input');
@@ -40,7 +37,6 @@ document.querySelectorAll('.toggle-password').forEach(icon => {
     });
 });
 
-// Валідація [cite: 48]
 const setError = (el, msg) => {
     const group = el.parentElement;
     const errorDisplay = group.querySelector('.error-msg');
@@ -57,14 +53,12 @@ const setSuccess = el => {
     el.classList.remove('invalid');
 };
 
-// Обробка реєстрації [cite: 27-37, 52]
 document.getElementById('signup-form').addEventListener('submit', function(e) {
     e.preventDefault();
     let isValid = true;
     const formData = new FormData(this); 
 
     
-    // Валідація First/Last Name [cite: 28, 29]
     ['firstName', 'lastName'].forEach(name => {
         const val = formData.get(name).trim();
         if (val.length < 3 || val.length > 15) {
@@ -73,14 +67,14 @@ document.getElementById('signup-form').addEventListener('submit', function(e) {
         } else setSuccess(this[name]);
     });
 
-    // Email (Regex) [cite: 30]
+
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.get('email'))) {
         setError(this['email'], "Невірний формат email");
         isValid = false;
     } else setSuccess(this['email']);
 
-    // Password [cite: 31, 32]
+
     const pass = formData.get('password');
     const confirm = formData.get('confirmPassword');
     if (pass.length < 6) {
@@ -88,18 +82,19 @@ document.getElementById('signup-form').addEventListener('submit', function(e) {
         isValid = false;
     } else setSuccess(this['password']);
 
+
     if (confirm !== pass || !confirm) {
         setError(this['confirmPassword'], "Паролі не збігаються");
         isValid = false;
     } else setSuccess(this['confirmPassword']);
 
-    // Phone [cite: 33]
+
     if (!formData.get('phone').startsWith('+380') || formData.get('phone').length !== 13) {
         setError(this['phone'], "Формат: +380XXXXXXXXX");
         isValid = false;
     } else setSuccess(this['phone']);
 
-    // Date Birth [cite: 34]
+
     const birth = new Date(formData.get('birthDate'));
     const today = new Date();
     let age = today.getFullYear() - birth.getFullYear();
@@ -111,7 +106,7 @@ document.getElementById('signup-form').addEventListener('submit', function(e) {
         isValid = false;
     } else setSuccess(this['birthDate']);
 
-    // Selects [cite: 35, 36, 37]
+
     ['sex', 'country', 'city'].forEach(name => {
         if (!formData.get(name)) {
             setError(this[name], "Обов'язкове поле");
@@ -119,14 +114,15 @@ document.getElementById('signup-form').addEventListener('submit', function(e) {
         } else setSuccess(this[name]);
     });
 
+
     if (isValid) {
-        alert("Ви успішно зареєстровані!"); // [cite: 55]
-        this.reset(); // 
+        alert("Ви успішно зареєстровані!");
+        this.reset(); 
         document.querySelectorAll('input, select').forEach(el => el.classList.remove('valid'));
     }
 });
 
-// Обробка логіну [cite: 38-42]
+
 document.getElementById('login-form').addEventListener('submit', function(e) {
     e.preventDefault();
     let isValid = true;
@@ -147,3 +143,5 @@ document.getElementById('login-form').addEventListener('submit', function(e) {
         this.reset();
     }
 });
+
+//const form = document.createElement('form');
